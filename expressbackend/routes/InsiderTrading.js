@@ -14,7 +14,7 @@ if (result.error) {
 router.get('/:id', async (req, res) => {
   console.log(req.params.id);
   const symbol = req.params.id;
-  try { let response = await fetch(`https://sandbox.iexapis.com/stable/stock/${symbol}/insider-transactions?token=${process.env.IEX_PUBLIC_TOKEN}`);
+  try { let response = await fetch(`https://sandbox.iexapis.com/stable/stock/${symbol}/insider-transactions/last-week?token=${process.env.IEX_PUBLIC_TOKEN}`);
     let jsoned = await response.json();
     console.log(jsoned)
     return res.json(jsoned)

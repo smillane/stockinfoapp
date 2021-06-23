@@ -11,12 +11,15 @@ import TableRow from '@material-ui/core/TableRow';
 import Table from '@material-ui/core/Table';
 import '../Styles/Search.css';
 import Button from '@material-ui/core/Button';
+import Truncate from 'react-truncate';
 
 const Search = (props) => {
   const [input, setInput] = useState('');
   const [stockInfo, setStockInfo] = useState([]);
   const [insiderTrading, setInsiderTrading] = useState([]);
   const [insiderTradingCount, setInsiderTradingCount] = useState(3);
+  const [stockNews, setStockNews] = useState([]);
+  const [stockNewsCount, setStockNewsCount] = useState(3);
 
   const fetchDatastockInfo = async () => {
     return await fetch(`/stocks/${input}`)
@@ -25,24 +28,37 @@ const Search = (props) => {
       setStockInfo(data)
     }).catch(err => {
       console.log("Error Reading data " + err)
-    })}
+  })}
 
-    const fetchDataInsiderTrading = async () => {
-      return await fetch(`/InsiderTrading/${input}`)
+  const fetchDataInsiderTrading = async () => {
+    return await fetch(`/InsiderTrading/${input}`)
+    .then(response => response.json())
+    .then(data => { 
+      setInsiderTrading(data)
+    }).catch(err => {
+      console.log("Error Reading data " + err)
+  })}
+
+    const fetchDataStockNews= async () => {
+      return await fetch(`/stocknews/${input}`)
       .then(response => response.json())
       .then(data => { 
-        setInsiderTrading(data)
+        setStockNews(data)
       }).catch(err => {
         console.log("Error Reading data " + err)
-      })}
+    })}
 
   useEffect(() => {fetchDatastockInfo()},[])
   useEffect(() => {fetchDataInsiderTrading()},[])
+  useEffect(() => {fetchDataStockNews()},[])
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     fetchDatastockInfo();
     fetchDataInsiderTrading();
+    fetchDataStockNews();
+    setInsiderTradingCount(3);
+    setStockNewsCount(3);
   }
   
   return (
@@ -75,10 +91,10 @@ const Search = (props) => {
                   Change: {stockInfo.change}, {(stockInfo.changePercent * 100).toFixed(2)}%
                 </TableRow>
                 <TableRow>
-                  Volume: {stockInfo.latestVolume.toLocaleString()}
+                  Volume: {stockInfo.latestVolume}
                 </TableRow>
                 <TableRow>
-                  Avg Volume: {stockInfo.avgTotalVolume.toLocaleString()}
+                  Avg Volume: {stockInfo.avgTotalVolume}
                 </TableRow>
                 <TableRow>
                   Dividend: 
@@ -93,9 +109,25 @@ const Search = (props) => {
             </TableContainer>
             
             <TableContainer>
+              <h2>News</h2>
+              <Table aria-label="customized table">
+              {stockNews.slice(0, stockNewsCount).map((news) => (
+                  <TableRow key={news.date} className='stocknews'>
+                    <h3>{news.headline}</h3>
+                    <Truncate lines={3} width={500}>                      
+                      <span>{news.summary}</span>
+                    </Truncate>
+                  </TableRow>
+              ))}
+              </Table>
+            </TableContainer>
+            <br />
+            <Button variant="contained" onClick={() => setStockNewsCount(stockNewsCount + 3)}>Show More Articles</Button>
+            
+            <TableContainer>
               <h2>Insider Trades</h2>
               {insiderTrading.slice(0, insiderTradingCount).map((trade) => (
-              <Table className="Table" aria-label="customized table" key={trade.date}>
+              <Table className="insider-trades-table" aria-label="customized table" key={trade.date}>
                   <TableRow>Insider Name: {trade.fullName}</TableRow>
                   <TableRow>Insider Title: {trade.reportedTitle}</TableRow>
                   <TableRow>Transaction Date: {trade.transactionDate}</TableRow>
@@ -106,6 +138,7 @@ const Search = (props) => {
               </Table>
               ))}
             </TableContainer>
+            <br />
             <Button variant="contained" onClick={() => setInsiderTradingCount(insiderTradingCount + 3)}>Show More Transactions</Button>
           </div>
           )

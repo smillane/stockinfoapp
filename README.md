@@ -1,5 +1,7 @@
 # App displaying information for stocks
 
+# Features to be implemented
+
 Historic graph
 Price
 Change
@@ -8,10 +10,7 @@ Avg volume
 dividend yield/%, payout date
 nope indicator
 
-Scrolling across top
-Spy, qqq, vix, btc
-Value, change from prev close 
- in numeric and % from the previous day
+Scrolling across top, Spy, qqq, vix, btc price w/ daily change
 
 Pull from Twitter or API unusual option activity
 figure out how to track options flow

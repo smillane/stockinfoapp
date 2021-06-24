@@ -3,6 +3,7 @@ const router = express.Router();
 const fetch = require('node-fetch');
 const dotenv = require('dotenv');
 const result = dotenv.config({ path: '.env.local' })
+const { connect, disconnect } = require('../database/connection-handling')
 
 // error logging for dotenv
 if (result.error) {

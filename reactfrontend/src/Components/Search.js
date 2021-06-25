@@ -79,13 +79,13 @@ const Search = (props) => {
       {(() => {if (stockInfo.length !== 0) {
         return (
           <div>
-            <TableContainer>
+            <TableContainer className='stock-info'>
               <Table className='Table' aria-label="customized table">
                 <TableRow>
-                  {stockInfo.companyName}
+                  <h1>{stockInfo.companyName}</h1>
                 </TableRow>
                 <TableRow>
-                  Price: {stockInfo.latestPrice}
+                  <h2>Price: {stockInfo.latestPrice}</h2>
                 </TableRow>
                 <TableRow>
                   Change: {stockInfo.change}, {(stockInfo.changePercent * 100).toFixed(2)}%
@@ -108,7 +108,7 @@ const Search = (props) => {
               </Table>
             </TableContainer>
             
-            <TableContainer>
+            <TableContainer className='stock-info'>
               <h2>News</h2>
               <Table aria-label="customized table">
               {stockNews.slice(0, stockNewsCount).map((news) => (
@@ -124,7 +124,7 @@ const Search = (props) => {
             <br />
             <Button variant="contained" onClick={() => setStockNewsCount(stockNewsCount + 3)}>Show More Articles</Button>
             
-            <TableContainer>
+            <TableContainer className='stock-info'>
               <h2>Insider Trades</h2>
               {insiderTrading.slice(0, insiderTradingCount).map((trade) => (
               <Table className="insider-trades-table" aria-label="customized table" key={trade.date}>

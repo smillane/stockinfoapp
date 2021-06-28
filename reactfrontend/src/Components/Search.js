@@ -13,7 +13,7 @@ import '../Styles/Search.css';
 import Button from '@material-ui/core/Button';
 import Truncate from 'react-truncate';
 
-const Search = (props) => {
+function Search (props) {
   const [input, setInput] = useState('');
   const [stockInfo, setStockInfo] = useState([]);
   const [insiderTrading, setInsiderTrading] = useState([]);
@@ -39,7 +39,7 @@ const Search = (props) => {
       console.log("Error Reading data " + err)
   })}
 
-    const fetchDataStockNews= async () => {
+    const fetchDataStockNews = async () => {
       return await fetch(`/stocknews/${input}`)
       .then(response => response.json())
       .then(data => { 
@@ -108,7 +108,7 @@ const Search = (props) => {
               </Table>
             </TableContainer>
             
-            <TableContainer className='stock-info'>
+            <TableContainer className='stock-info border-top'>
               <h2>News</h2>
               <Table aria-label="customized table">
               {stockNews.slice(0, stockNewsCount).map((news) => (
@@ -124,7 +124,7 @@ const Search = (props) => {
             <br />
             <Button variant="contained" onClick={() => setStockNewsCount(stockNewsCount + 3)}>Show More Articles</Button>
             
-            <TableContainer className='stock-info'>
+            <TableContainer className='stock-info border-top'>
               <h2>Insider Trades</h2>
               {insiderTrading.slice(0, insiderTradingCount).map((trade) => (
               <Table className="insider-trades-table" aria-label="customized table" key={trade.date}>

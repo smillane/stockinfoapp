@@ -24,7 +24,6 @@ function insiderTradingQuery(stockInput, lastUpdatedInput, fullNameInput, report
   )
   ON CONFLICT (stock)
   DO UPDATE SET 
-  stock = stockInput,
   lastUpdated = lastUpdatedInput,
   fullName = fullNameInput,
   reportedTitle = reportedTitleInput,
@@ -79,7 +78,6 @@ function stockData(stockInput, lastUpdatedInput, latestPriceInput, changeInput, 
   )
   ON CONFLICT (stock)
   DO UPDATE SET
-  stock = stockInput,
   lastUpdated = lastUpdatedInput,
   latestPrice = latestPriceInput,
   change = changeInput,
@@ -95,10 +93,8 @@ function stockDividend(stockInput, lastUpdatedInput) {
   )
   INSERT INTO stockDividend (stock, lastUpdated)
   VALUES (
-    stock, 
     lastUpdated
   ON CONFLICT (stock)
   DO UPDATE SET
-  stock = stockInput,
   lastUpdated = lastUpdatedInput;
 }

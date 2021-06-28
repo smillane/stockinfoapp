@@ -1,4 +1,4 @@
-function insiderTradingQuery(stock, lastUpdated, fullName, reportedTitle, transactionDate, transactionCode, is10b51, transactionShares, postShares) {
+function insiderTrading (stock, lastUpdated, fullName, reportedTitle, transactionDate, transactionCode, is10b51, transactionShares, postShares) {
   CREATE TABLE IF NOT EXISTS insiderTrading (
     stock VARCHAR (50) UNIQUE NOT null,
     lastUpdated TIMESTAMP NOT null,
@@ -12,7 +12,7 @@ function insiderTradingQuery(stock, lastUpdated, fullName, reportedTitle, transa
   );
 }
 
-function stockNews(stock, lastUpdated, headline, summary) {
+function stockNews (stock, lastUpdated, headline, summary) {
   CREATE TABLE IF NOT EXISTS stockNews (
     stock VARCHAR (50) UNIQUE NOT null,
     lastUpdated TIMESTAMP NOT null,
@@ -21,7 +21,7 @@ function stockNews(stock, lastUpdated, headline, summary) {
   );
 }
 
-function stockData(stock, lastUpdated, latestPrice, change, changePercent, latestVolume, avgTotalVolume) {
+function stockData (stock, lastUpdated, latestPrice, change, changePercent, latestVolume, avgTotalVolume) {
   CREATE TABLE IF NOT EXISTS stockData (
     stock VARCHAR (50) UNIQUE NOT null,
     lastUpdated TIMESTAMP NOT null,
@@ -33,7 +33,7 @@ function stockData(stock, lastUpdated, latestPrice, change, changePercent, lates
   );
 }
 
-function stockDividend(stock, lastUpdated) {
+function stockDividend (stock, lastUpdated) {
   CREATE TABLE IF NOT EXISTS stockDividend (
     stock VARCHAR (50) UNIQUE NOT null,
     lastUpdated TIMESTAMP NOT null,

@@ -2,16 +2,19 @@ import { useState, useEffect } from 'react';
 import { SearchRounded } from '@material-ui/icons';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Input from '@material-ui/core/Input';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import Divider from '@material-ui/core/Divider';
-import ListItemText from '@material-ui/core/ListItemText';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableRow from '@material-ui/core/TableRow';
 import Table from '@material-ui/core/Table';
 import '../Styles/Search.css';
 import Button from '@material-ui/core/Button';
 import Truncate from 'react-truncate';
+import styled from "styled-components";
+
+const StyledMainDiv = styled.div`
+  margin-top: 5%;
+  padding-bottom: 5%;
+`;
+
 
 function Search (props) {
   const [input, setInput] = useState('');
@@ -62,7 +65,7 @@ function Search (props) {
   }
   
   return (
-    <div>
+    <StyledMainDiv>
       <form onSubmit={handleSubmit}>
         <Input
           placeholder="Search"
@@ -144,7 +147,7 @@ function Search (props) {
           )
         }
       })()}
-    </div>
+    </StyledMainDiv>
   );
 }
 

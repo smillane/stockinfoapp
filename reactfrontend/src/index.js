@@ -3,15 +3,19 @@ import ReactDOM from 'react-dom';
 import './Styles/globals.css';
 import reportWebVitals from './reportWebVitals';
 import Search from './Components/Search';
+import Footer from './Components/Shared/Footer';
+import NavBar from './Components/Shared/Navbar';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 ReactDOM.render(
   <React.StrictMode>
+    <CssBaseline />
+    <NavBar />
     <Container>
-      <CssBaseline />
       <Search />
-    </Container>    
+    </Container>
+    <Footer />
   </React.StrictMode>,
   document.getElementById('root')
 );

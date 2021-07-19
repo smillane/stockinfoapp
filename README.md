@@ -1,5 +1,11 @@
 # App displaying information for stocks
 
+Built using React, Node, Postgres
+
+Data provided by IEX Cloud, https://iexcloud.io
+
+Data provided by Twitter/Reddit API's
+
 # Features to be implemented
 
 Historic graph
@@ -12,15 +18,15 @@ nope indicator
 
 Scrolling across top, Spy, qqq, vix, btc price w/ daily change
 
-Pull from Twitter or API unusual option activity
-figure out how to track options flow
+Unusual Option Flow
 
 Insider trading
 insider trading in relation to tenure
 
 Earnings information
 
-How popular it is on reddit trading subs, sentiment if possible
+Reddit sentiment
+Twitter Sentiment
 
 Website popularity
 
@@ -28,5 +34,13 @@ congress trades
 
 cms for "News" ??
 
-discord implementation for alerts
-twitter implementation for alerts
+discord implementation for alerts based on your list/alerts
+twitter implementation for alerts based on your list/alerts
+
+IPO Spotlight
+
+Auth0 Integration
+
+Skeleton loading animations or fill (like youtube) 
+
+Loading animation

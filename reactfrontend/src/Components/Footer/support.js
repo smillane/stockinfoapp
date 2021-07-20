@@ -20,16 +20,16 @@ const StyledBody = styled(Typography)`
   text-align: center;
 `;
 
-function StockLists() {
+function Support() {
 
   return (
     <Container>
       <StyledMain>
-      <StyledHeader variant='h2' gutterBottom>Your Lists</StyledHeader>
-      <StyledBody>list of your stocks here</StyledBody>
+        <StyledHeader variant='h2' gutterBottom>Support</StyledHeader>
+        <StyledBody>Support me, pay me on my cashapp(pay kenzie)</StyledBody>
       </StyledMain>
     </Container>
   );
 }
 
-export default StockLists;
+export default Support;

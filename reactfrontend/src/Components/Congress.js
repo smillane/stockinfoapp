@@ -20,16 +20,16 @@ const StyledBody = styled(Typography)`
   text-align: center;
 `;
 
-function StockLists() {
+function Congress() {
 
   return (
     <Container>
       <StyledMain>
-      <StyledHeader variant='h2' gutterBottom>Your Lists</StyledHeader>
-      <StyledBody>list of your stocks here</StyledBody>
+      <StyledHeader variant='h2' gutterBottom>Congressional Trades</StyledHeader>
+      <StyledBody>list of stock trades here</StyledBody>
       </StyledMain>
     </Container>
   );
 }
 
-export default StockLists;
+export default Congress;

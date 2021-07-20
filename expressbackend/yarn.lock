@@ -208,10 +208,10 @@ debug@2.6.9:
   dependencies:
     ms "2.0.0"
 
-debug@^4.1.1:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.1.tgz#f0d229c505e0c6d8c49ac553d1b13dc183f6b2ee"
-  integrity sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==
+debug@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
+  integrity sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==
   dependencies:
     ms "2.1.2"
 
@@ -269,23 +269,23 @@ etag@~1.8.1:
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
 
-express-openid-connect@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/express-openid-connect/-/express-openid-connect-2.4.0.tgz#a17a05d4bce3e9383e5c24f8682e7e5040ec5c7a"
-  integrity sha512-JPUQCyhudC1iN2bzFkdLD/LYATbgtfr5Vyrty10FFTBJZB2m83SWoDrPfJhpZWiDERgMp5n5kmL70X4/pL96NA==
+express-openid-connect@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/express-openid-connect/-/express-openid-connect-2.5.0.tgz#0ca85e2aadb966f557f65c8db93af3f858a288d9"
+  integrity sha512-4XTHGHYZOFHfdwoGDV5VYeb2TTcyB/WdJaVmRr9y7IUQd2ofil2PYeIkaiCQIPfN9ZFu6qe9HLcuNj0yqUj+dQ==
   dependencies:
     base64url "^3.0.1"
     cb "^0.1.0"
     clone "^2.1.2"
     cookie "^0.4.1"
-    debug "^4.1.1"
-    futoin-hkdf "^1.3.2"
-    http-errors "^1.7.3"
+    debug "^4.3.2"
+    futoin-hkdf "^1.3.3"
+    http-errors "^1.8.0"
     joi "^17.4.0"
     jose "^2.0.5"
     on-headers "^1.0.2"
-    openid-client "^4.0.0"
-    p-memoize "^4.0.0"
+    openid-client "^4.7.4"
+    p-memoize "^4.0.1"
     url-join "^4.0.1"
 
 express@^4.17.1:
@@ -347,10 +347,10 @@ fresh@0.5.2:
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
   integrity sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=
 
-futoin-hkdf@^1.3.2:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/futoin-hkdf/-/futoin-hkdf-1.3.3.tgz#6ee1c9c105dfa0995ba4f80633cf1c0c32defcb2"
-  integrity sha512-oR75fYk3B3X9/B02Y6vusrBKucrpC6VjxhRL+C6B7FwUpuSRHbhBNG3AZbcE/xPyJmEQWsyqUFp3VeNNbA3S7A==
+futoin-hkdf@^1.3.3:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/futoin-hkdf/-/futoin-hkdf-1.4.2.tgz#fd534e848e0e50339b8bfbd81250b09cbff10ba3"
+  integrity sha512-2BggwLEJOTfXzKq4Tl2bIT37p0IqqKkblH4e0cMp2sXTdmwg/ADBKMxvxaEytYYcgdxgng8+acsi3WgMVUl6CQ==
 
 get-stream@^5.1.0:
   version "5.2.0"
@@ -392,7 +392,7 @@ http-errors@1.7.2:
     statuses ">= 1.5.0 < 2"
     toidentifier "1.0.0"
 
-http-errors@^1.7.3:
+http-errors@^1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.8.0.tgz#75d1bbe497e1044f51e4ee9e704a62f28d336507"
   integrity sha512-4I8r0C5JDhT5VkvI47QktDW75rNlGVsUf/8hzjCC/wkWI/jdTRmBb9aI7erSG82r1bjKY3F6k28WnsVxB1C73A==
@@ -617,10 +617,10 @@ once@^1.3.1, once@^1.4.0:
   dependencies:
     wrappy "1"
 
-openid-client@^4.0.0:
-  version "4.7.3"
-  resolved "https://registry.yarnpkg.com/openid-client/-/openid-client-4.7.3.tgz#ea4f6f9ff6203dfbbe3d9bb4415d5dce751b0a70"
-  integrity sha512-YLwZQLSjo3gdSVxw/G25ddoRp9oCpXkREZXssmenlejZQPsnTq+yQtFUcBmC7u3VVkx+gwqXZF7X0CtAAJrRRg==
+openid-client@^4.7.4:
+  version "4.7.4"
+  resolved "https://registry.yarnpkg.com/openid-client/-/openid-client-4.7.4.tgz#bd9978456d53d38adb89856b14a8fbd094f7732e"
+  integrity sha512-n+RURXYuR0bBZo9i0pn+CXZSyg5JYQ1nbwEwPQvLE7EcJt/vMZ2iIMjLehl5DvCN53XUoPVZs9KAE5r6d9fxsw==
   dependencies:
     aggregate-error "^3.1.0"
     got "^11.8.0"
@@ -640,7 +640,7 @@ p-defer@^1.0.0:
   resolved "https://registry.yarnpkg.com/p-defer/-/p-defer-1.0.0.tgz#9f6eb182f6c9aa8cd743004a7d4f96b196b0fb0c"
   integrity sha1-n26xgvbJqozXQwBKfU+WsZaw+ww=
 
-p-memoize@^4.0.0:
+p-memoize@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/p-memoize/-/p-memoize-4.0.1.tgz#6f4231857fec10de2504611fe820c808fa8c5f8b"
   integrity sha512-km0sP12uE0dOZ5qP+s7kGVf07QngxyG0gS8sYFvFWhqlgzOsSy+m71aUejf/0akxj5W7gE//2G74qTv6b4iMog==

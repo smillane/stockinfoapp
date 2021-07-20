@@ -1,22 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './Styles/globals.css';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Search from './Components/Search';
-import Footer from './Components/Shared/Footer';
-import NavBar from './Components/Shared/Navbar';
-import Container from '@material-ui/core/Container';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import Auth0ProviderWithHistory from './Auth/auth0-provider-history';
+import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <CssBaseline />
-    <NavBar />
-    <Container>
-      <Search />
-    </Container>
-    <Footer />
-  </React.StrictMode>,
+  <Router>
+    <Auth0ProviderWithHistory>
+      <App />
+    </Auth0ProviderWithHistory>
+  </Router>,
   document.getElementById('root')
 );
 

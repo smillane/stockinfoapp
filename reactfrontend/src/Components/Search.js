@@ -9,10 +9,13 @@ import '../Styles/Search.css';
 import Button from '@material-ui/core/Button';
 import Truncate from 'react-truncate';
 import styled from "styled-components";
+import { Container, Typography } from '@material-ui/core';
 
 const StyledMainDiv = styled.div`
   margin-top: 5%;
   padding-bottom: 5%;
+  max-width: 1080px;
+  min-height: 75vh;
 `;
 
 
@@ -65,89 +68,93 @@ function Search (props) {
   }
   
   return (
-    <StyledMainDiv>
-      <form onSubmit={handleSubmit}>
-        <Input
-          placeholder="Search"
-          id="input-with-icon-adornment"          
-          startAdornment={
-            <InputAdornment position="start">
-              <SearchRounded />
-            </InputAdornment>
-          }
-          value={input}
-          onChange={e => setInput(e.target.value)}
-        />
-      </form>
-      {(() => {if (stockInfo.length !== 0) {
-        return (
-          <div>
-            <TableContainer className='stock-info'>
-              <Table className='Table' aria-label="customized table">
-                <TableRow>
-                  <h1>{stockInfo.companyName}</h1>
-                </TableRow>
-                <TableRow>
-                  <h2>Price: {stockInfo.latestPrice}</h2>
-                </TableRow>
-                <TableRow>
-                  Change: {stockInfo.change}, {(stockInfo.changePercent * 100).toFixed(2)}%
-                </TableRow>
-                <TableRow>
-                  Volume: {stockInfo.latestVolume}
-                </TableRow>
-                <TableRow>
-                  Avg Volume: {stockInfo.avgTotalVolume}
-                </TableRow>
-                <TableRow>
-                  Dividend: 
-                </TableRow>
-                <TableRow>
-                  Dividend Payment Date: 
-                </TableRow>
-                <TableRow>
-                  Dividend Record Date: 
-                </TableRow>
-              </Table>
-            </TableContainer>
-            
-            <TableContainer className='stock-info border-top'>
-              <h2>News</h2>
-              <Table aria-label="customized table">
-              {stockNews.slice(0, stockNewsCount).map((news) => (
-                  <TableRow key={news.date} className='stocknews'>
-                    <h3>{news.headline}</h3>
-                    <Truncate lines={3} width={500}>                      
-                      <span>{news.summary}</span>
-                    </Truncate>
+    <Container>
+      <StyledMainDiv>
+        <form onSubmit={handleSubmit}>
+          <Input
+            placeholder="Search"
+            id="input-with-icon-adornment"          
+            startAdornment={
+              <InputAdornment position="start">
+                <SearchRounded />
+              </InputAdornment>
+            }
+            value={input}
+            onChange={e => setInput(e.target.value)}
+          />
+        </form>
+        {(() => {if (stockInfo.length !== 0) {
+          return (
+            <div>
+              <TableContainer className='stock-info'>
+                <Table className='Table' aria-label="customized table">
+                  <TableRow>
+                    <Typography variant='h3' gutterBottom>{stockInfo.companyName}</Typography>
                   </TableRow>
-              ))}
-              </Table>
-            </TableContainer>
-            <br />
-            <Button variant="contained" onClick={() => setStockNewsCount(stockNewsCount + 3)}>Show More Articles</Button>
-            
-            <TableContainer className='stock-info border-top'>
-              <h2>Insider Trades</h2>
-              {insiderTrading.slice(0, insiderTradingCount).map((trade) => (
-              <Table className="insider-trades-table" aria-label="customized table" key={trade.date}>
-                  <TableRow>Insider Name: {trade.fullName}</TableRow>
-                  <TableRow>Insider Title: {trade.reportedTitle}</TableRow>
-                  <TableRow>Transaction Date: {trade.transactionDate}</TableRow>
-                  <TableRow>Transaction Type: {trade.transactionCode}</TableRow>
-                  <TableRow>Predetermined Trade: {trade.is10b51}</TableRow>                  
-                  <TableRow>Transaction Size: {trade.transactionShares} Shares</TableRow>
-                  <TableRow>Shares Remaining: {trade.postShares}</TableRow>                
-              </Table>
-              ))}
-            </TableContainer>
-            <br />
-            <Button variant="contained" onClick={() => setInsiderTradingCount(insiderTradingCount + 3)}>Show More Transactions</Button>
-          </div>
-          )
-        }
-      })()}
-    </StyledMainDiv>
+                  <TableRow>
+                    <Typography variant='h4'>Price: {stockInfo.latestPrice}</Typography>
+                  </TableRow>
+                  <TableRow>
+                    <Typography variant='h5'>
+                    Change: {stockInfo.change}, {(stockInfo.changePercent * 100).toFixed(2)}%
+                    </Typography>
+                  </TableRow>
+                  <TableRow>
+                    Volume: {stockInfo.latestVolume}
+                  </TableRow>
+                  <TableRow>
+                    Avg Volume: {stockInfo.avgTotalVolume}
+                  </TableRow>
+                  <TableRow>
+                    Dividend: 
+                  </TableRow>
+                  <TableRow>
+                    Dividend Payment Date: 
+                  </TableRow>
+                  <TableRow>
+                    Dividend Record Date: 
+                  </TableRow>
+                </Table>
+              </TableContainer>
+              
+              <TableContainer className='stock-info border-top'>
+                <h2>News</h2>
+                <Table aria-label="customized table">
+                {stockNews.slice(0, stockNewsCount).map((news) => (
+                    <TableRow key={news.date} className='stocknews'>
+                      <h3>{news.headline}</h3>
+                      <Truncate lines={3} width={500}>                      
+                        <span>{news.summary}</span>
+                      </Truncate>
+                    </TableRow>
+                ))}
+                </Table>
+              </TableContainer>
+              <br />
+              <Button variant="contained" onClick={() => setStockNewsCount(stockNewsCount + 3)}>Show More Articles</Button>
+              
+              <TableContainer className='stock-info border-top'>
+                <h2>Insider Trades</h2>
+                {insiderTrading.slice(0, insiderTradingCount).map((trade) => (
+                <Table className="insider-trades-table" aria-label="customized table" key={trade.date}>
+                    <TableRow>Insider Name: {trade.fullName}</TableRow>
+                    <TableRow>Insider Title: {trade.reportedTitle}</TableRow>
+                    <TableRow>Transaction Date: {trade.transactionDate}</TableRow>
+                    <TableRow>Transaction Type: {trade.transactionCode}</TableRow>
+                    <TableRow>Predetermined Trade: {trade.is10b51}</TableRow>                  
+                    <TableRow>Transaction Size: {trade.transactionShares} Shares</TableRow>
+                    <TableRow>Shares Remaining: {trade.postShares}</TableRow>                
+                </Table>
+                ))}
+              </TableContainer>
+              <br />
+              <Button variant="contained" onClick={() => setInsiderTradingCount(insiderTradingCount + 3)}>Show More Transactions</Button>
+            </div>
+            )
+          }
+        })()}
+      </StyledMainDiv>
+    </Container>
   );
 }
 

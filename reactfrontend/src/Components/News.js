@@ -20,16 +20,16 @@ const StyledBody = styled(Typography)`
   text-align: center;
 `;
 
-function StockLists() {
+function News() {
 
   return (
     <Container>
       <StyledMain>
-      <StyledHeader variant='h2' gutterBottom>Your Lists</StyledHeader>
-      <StyledBody>list of your stocks here</StyledBody>
+      <StyledHeader variant='h2' gutterBottom>News</StyledHeader>
+      <StyledBody>list of news here</StyledBody>
       </StyledMain>
     </Container>
   );
 }
 
-export default StockLists;
+export default News;

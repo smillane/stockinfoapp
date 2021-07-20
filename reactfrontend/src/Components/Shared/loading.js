@@ -7,7 +7,7 @@ const StyledMain = styled.div`
   justify-content: center;
   align-items: center;
   max-width: 1080px;
-  min-height: 70vh;
+  min-height: 100vh;
 `;
 
 const StyledHeader = styled(Typography)`
@@ -15,21 +15,15 @@ const StyledHeader = styled(Typography)`
   text-align: center;
 `;
 
-const StyledBody = styled(Typography)`
-  display: flex;
-  text-align: center;
-`;
-
-function StockLists() {
+function Loading() {
 
   return (
     <Container>
       <StyledMain>
-      <StyledHeader variant='h2' gutterBottom>Your Lists</StyledHeader>
-      <StyledBody>list of your stocks here</StyledBody>
+        <StyledHeader variant='h2' gutterBottom>Loading...</StyledHeader>
       </StyledMain>
     </Container>
   );
 }
 
-export default StockLists;
+export default Loading;

@@ -29,16 +29,16 @@ function App() {
       <div>
         <CssBaseline />
         <NavBar />
-        <Route exact path='/' component={Search} />
-        <ProtectedRoute exact path='/profile' component={Profile} />
-        <ProtectedRoute exact path='/lists' component={StockLists} />
-        <ProtectedRoute exact path='/faq' component={Faq} />
-        <ProtectedRoute exact path='/release' component={Release} />
-        <ProtectedRoute exact path='/terms' component={Terms} />
-        <ProtectedRoute exact path='/support' component={Support} />
-        <ProtectedRoute exact path='/news' component={News} />
-        <ProtectedRoute exact path='/trending' component={Trending} />
-        <ProtectedRoute exact path='/congress' component={Congress} />
+        <ProtectedRoute path='/' exact component={Search} />
+        <ProtectedRoute path='/profile' component={Profile} />
+        <ProtectedRoute path='/lists' component={StockLists} />
+        <ProtectedRoute path='/faq' component={Faq} />
+        <ProtectedRoute path='/release' component={Release} />
+        <ProtectedRoute path='/terms' component={Terms} />
+        <ProtectedRoute path='/support' component={Support} />
+        <ProtectedRoute path='/news' component={News} />
+        <ProtectedRoute path='/trending' component={Trending} />
+        <ProtectedRoute path='/congress' component={Congress} />
         <Footer />
       </div>
     </Switch>

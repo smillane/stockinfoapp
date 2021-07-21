@@ -1,15 +1,15 @@
 import { AppBar, Toolbar, Link, Button } from '@material-ui/core';
 import styled from "styled-components";
-import LoginButton from './login-button';
-import LogoutButton from './logout-button';
+import LoginButton from '../Navbar/login-button';
+import LogoutButton from '../Navbar/logout-button';
 import { useAuth0 } from "@auth0/auth0-react";
-import SignupButton from './sign-up-button';
+import SignupButton from '../Navbar/sign-up-button';
 
 const StyledButton = styled(Button)`
   margin-left: 2%;
 `;
 
-const AppName = styled(Link)`
+const AppName = styled.div`
   flex-grow: 1;
 `;
 
@@ -21,7 +21,9 @@ function NavBar() {
   return (
     <AppBar style={{ backgroundColor: 'white' }} position='static'>
       <Toolbar>
-        <AppName href='/'>StockInfoApp</AppName>
+        <AppName>
+          <Button href='/'>StockInfoApp</Button>
+        </AppName>
         <StyledButton href='/lists'>My Lists</StyledButton>
         <StyledButton href='/news'>News</StyledButton>
         <StyledButton href='/trending'>Todays Trending</StyledButton>

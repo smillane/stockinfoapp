@@ -10,9 +10,17 @@ const StyledMain = styled.div`
   min-height: 70vh;
 `;
 
-const StyledHeader = styled(Typography)`
-  display: flex;
-  text-align: center;
+const StyledMainHeader = styled(Typography)`
+display: flex;
+text-align: center;
+margin-bottom: 2%;
+margin-top: 2%;
+`;
+
+const StyledSubHeader = styled(Typography)`
+display: flex;
+text-align: center;
+margin-bottom: 2%;
 `;
 
 const StyledBody = styled(Typography)`
@@ -25,11 +33,25 @@ function Terms() {
   return (
     <Container>
       <StyledMain>
-          <StyledHeader variant='h2' gutterBottom>Terms</StyledHeader>
-          <StyledBody variant='body1'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed fermentum lorem. Cras lobortis nisi in rhoncus semper. 
-          Aenean vehicula at quam quis malesuada. Praesent malesuada leo eget blandit molestie. Curabitur vestibulum imperdiet mi vel condimentum. 
-          Pellentesque quis mi eu urna tincidunt hendrerit. Morbi rhoncus vehicula neque, vel molestie nibh mattis a. Donec et erat posuere sem faucibus imperdiet. 
-          Ut tristique erat sed augue vestibulum, non gravida tortor rutrum. Maecenas suscipit felis id orci aliquet faucibus.</StyledBody>
+          <StyledMainHeader variant='h4'>Terms</StyledMainHeader>
+          <StyledSubHeader variant='h4'>Limitations on investment guidance and professional advice</StyledSubHeader>
+          <StyledBody variant='body1'>Any content on this site or related pages are not intended to provide legal, tax, investment or insurance advice. 
+            NAME TBD
+            is not registered as a securities broker-dealer or an investment adviser with the U.S. Securities and Exchange Commission, 
+            the Financial Industry Regulatory Authority (“FINRA”) or any state securities regulatory authority. Nothing on 
+            NAME TBD
+            should be construed as an offer to sell, a solicitation of an offer to buy, or a recommendation for any security by 
+            NAME TBD 
+            or any third party. Certain investment planning tools available on 
+            NAME TBD
+            may provide general investment education based on your input. You are solely responsible for determining whether any investment, 
+            investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, 
+            financial circumstances and risk tolerance. You should consult your legal or tax professional regarding your specific situation.</StyledBody>
+
+          <StyledMainHeader variant='h4'>Terms and Conditions ("Terms")</StyledMainHeader>
+          <StyledBody variant='body1'>lorem ipsum</StyledBody>
+
+
         </StyledMain>
     </Container>
   );

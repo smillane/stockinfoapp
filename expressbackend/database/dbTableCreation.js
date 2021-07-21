@@ -1,27 +1,50 @@
-function insiderTrading (stock, lastUpdated, fullName, reportedTitle, transactionDate, transactionCode, is10b51, transactionShares, postShares) {
+function insiderTrading() {
   CREATE TABLE IF NOT EXISTS insiderTrading (
-    stock VARCHAR (50) UNIQUE NOT null,
+    symbol VARCHAR (10) UNIQUE NOT null,
     lastUpdated TIMESTAMP NOT null,
-    fullName VARCHAR,
-    reportedTitle VARCHAR,
-    transactionDate VARCHAR,
-    transactionCode VARCHAR,
-    is10b51 VARCHAR,
-    transactionShares VARCHAR,
-    postShares VARCHAR,
+    fullName VARCHAR (50),
+    reportedTitle VARCHAR (50),
+    transactionDate VARCHAR (50),
+    transactionCode VARCHAR (50),
+    is10b51 VARCHAR (20),
+    transactionShares VARCHAR (20),
+    postShares VARCHAR (20),
   );
 }
 
-function stockNews (stock, lastUpdated, headline, summary) {
+function stockNews() {
   CREATE TABLE IF NOT EXISTS stockNews (
-    stock VARCHAR (50) UNIQUE NOT null,
+    symbol VARCHAR (10) UNIQUE NOT null,
     lastUpdated TIMESTAMP NOT null,
     headline VARCHAR,
     summary VARCHAR,
   );
 }
 
-function stockData (stock, lastUpdated, latestPrice, change, changePercent, latestVolume, avgTotalVolume) {
+function stockData() {
+  CREATE TABLE IF NOT EXISTS stockData (
+    symbol VARCHAR (10) UNIQUE NOT null,
+    lastUpdated TIMESTAMP NOT null,
+    latestPrice VARCHAR (50),
+    change VARCHAR (50),
+    changePercent VARCHAR (50),
+    latestVolume VARCHAR (50),
+    avgTotalVolume VARCHAR (50),
+    paymentDate VARCHAR (50),
+  );
+}
+
+function stockDividend() {
+  CREATE TABLE IF NOT EXISTS stockDividend (
+    symbol VARCHAR (10) UNIQUE NOT null,
+    lastUpdated TIMESTAMP NOT null,
+    amount VARCHAR,
+    recordDate VARCHAR,
+    flag VARCHAR,
+  );
+}
+
+function stocklists() {
   CREATE TABLE IF NOT EXISTS stockData (
     stock VARCHAR (50) UNIQUE NOT null,
     lastUpdated TIMESTAMP NOT null,
@@ -30,14 +53,5 @@ function stockData (stock, lastUpdated, latestPrice, change, changePercent, late
     changePercent VARCHAR,
     latestVolume VARCHAR,
     avgTotalVolume VARCHAR,
-  );
-}
-
-function stockDividend (stock, lastUpdated) {
-  CREATE TABLE IF NOT EXISTS stockDividend (
-    stock VARCHAR (50) UNIQUE NOT null,
-    lastUpdated TIMESTAMP NOT null,
-     VARCHAR,
-     VARCHAR,
   );
 }

@@ -1,17 +1,19 @@
-function insiderTrading (stock, lastUpdated, fullName, reportedTitle, transactionDate, transactionCode, is10b51, transactionShares, postShares) {
-  CREATE OR REPLACE PROCEDURE insiderTrading (
-    stock VARCHAR (50) UNIQUE NOT null,
-    lastUpdated TIMESTAMP NOT null,
-    fullName VARCHAR,
-    reportedTitle VARCHAR,
-    transactionDate VARCHAR,
-    transactionCode VARCHAR,
-    is10b51 VARCHAR,
-    transactionShares VARCHAR,
-    postShares VARCHAR,
+function insiderTrading(symbolInput, lastUpdatedInput, fullNameInput, reportedTitleInput, transactionDateInput, transactionCodeInput, is10b51Input, transactionSharesInput, postSharesInput) {
+  CREATE OR REPLACE PROCEDURE insiderTrading(
+    symbolInput VARCHAR (10) UNIQUE NOT null,
+    lastUpdatedInput TIMESTAMP NOT null,
+    fullNameInput VARCHAR,
+    reportedTitleInput VARCHAR,
+    transactionDateInput VARCHAR,
+    transactionCodeInput VARCHAR,
+    is10b51Input VARCHAR,
+    transactionSharesInput VARCHAR,
+    postSharesInput VARCHAR,
   )
   LANGUAGE plpgsql
   as $$
+  declare
+    
   begin
     if 
   

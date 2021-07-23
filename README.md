@@ -24,6 +24,10 @@ nope indicator
 
 Scrolling across top, Spy, qqq, vix, btc price w/ daily change
 
+Commodities
+
+Economic data/calender
+
 Unusual Option Flow
 
 Insider trading

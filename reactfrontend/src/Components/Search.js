@@ -9,7 +9,7 @@ import '../Styles/Search.css';
 import Button from '@material-ui/core/Button';
 import Truncate from 'react-truncate';
 import styled from "styled-components";
-import { Container, Typography } from '@material-ui/core';
+import { Box, Container, Typography } from '@material-ui/core';
 
 const StyledMainDiv = styled.div`
   margin-top: 5%;
@@ -86,36 +86,21 @@ function Search (props) {
         {(() => {if (stockInfo.length !== 0) {
           return (
             <div>
-              <TableContainer className='stock-info'>
-                <Table className='Table' aria-label="customized table">
-                  <TableRow>
-                    <Typography variant='h3' gutterBottom>{stockInfo.companyName}</Typography>
-                  </TableRow>
-                  <TableRow>
-                    <Typography variant='h4'>Price: {stockInfo.latestPrice}</Typography>
-                  </TableRow>
-                  <TableRow>
-                    <Typography variant='h5'>
-                    Change: {stockInfo.change}, {(stockInfo.changePercent * 100).toFixed(2)}%
-                    </Typography>
-                  </TableRow>
-                  <TableRow>
-                    Volume: {stockInfo.latestVolume}
-                  </TableRow>
-                  <TableRow>
-                    Avg Volume: {stockInfo.avgTotalVolume}
-                  </TableRow>
-                  <TableRow>
-                    Dividend: 
-                  </TableRow>
-                  <TableRow>
-                    Dividend Payment Date: 
-                  </TableRow>
-                  <TableRow>
-                    Dividend Record Date: 
-                  </TableRow>
-                </Table>
-              </TableContainer>
+              <Box className='stock-info'>
+                <Typography variant='h3' gutterBottom>{stockInfo.companyName}</Typography>
+                <Typography variant='h4' gutterBottom>Price: {stockInfo.latestPrice}</Typography>
+                <Typography variant='h5' gutterBottom>Change: {stockInfo.change}, {(stockInfo.changePercent * 100).toFixed(2)}%</Typography>
+                <Typography variant='h5' gutterBottom>Volume: {stockInfo.latestVolume}</Typography>
+                <Typography variant='h5'>Avg Volume: {stockInfo.avgTotalVolume}</Typography>
+              </Box>
+
+              <Box className='stock-info border-top'>
+                <Typography variant='h5'>Dividends</Typography>
+                <Typography variant='body1' gutterBottom>Amount: </Typography>
+                <Typography variant='body1' gutterBottom>Frequency: </Typography>
+                <Typography variant='body1' gutterBottom>Dividend Payment Date: </Typography>
+                <Typography variant='body1' gutterBottom>Dividend Record Date: </Typography>
+              </Box>
               
               <TableContainer className='stock-info border-top'>
                 <h2>News</h2>

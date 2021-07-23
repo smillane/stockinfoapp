@@ -37,7 +37,7 @@ function Support() {
           <StyledIcon />
           <StyledBody variant='h5'>Donate</StyledBody>
         </StyledButton>
-        <StyledBody variant='body1'>Help support this project for more features and future updates.</StyledBody>
+        <StyledBody variant='h5'>Help support this project for more features and future updates.</StyledBody>
       </StyledMain>
     </Container>
   );

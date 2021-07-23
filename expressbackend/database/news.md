@@ -24,4 +24,4 @@ Both the key name and the value are case sensitive. A pipe symbol (|) is used to
 
 
 
-Potentially don't even include news?
+Have news be a future feature down the line, since the queries/logic for when/how to update using api seems tricky

@@ -9,7 +9,7 @@ import '../Styles/Search.css';
 import Button from '@material-ui/core/Button';
 import Truncate from 'react-truncate';
 import styled from "styled-components";
-import { Box, Container, Typography } from '@material-ui/core';
+import { Box, Container, Typography, TableCell, TableHead, TableBody } from '@material-ui/core';
 
 const StyledMainDiv = styled.div`
   margin-top: 5%;
@@ -52,6 +52,11 @@ function Search (props) {
     fetchDataInsiderTrading();
     setInsiderTradingCount(3);
   }
+
+  function isBoolean(val) {
+    if (val === true) {return 'Yes';}
+    return 'No';
+  }
   
   return (
     <Container>
@@ -89,18 +94,33 @@ function Search (props) {
               </Box>
               
               <TableContainer className='stock-info border-top'>
-                <h2>Insider Trades</h2>
-                {insiderTrading.slice(0, insiderTradingCount).map((trade) => (
-                <Table className="insider-trades-table" aria-label="customized table" key={trade.date}>
-                    <TableRow>Insider Name: {trade.fullName}</TableRow>
-                    <TableRow>Insider Title: {trade.reportedTitle}</TableRow>
-                    <TableRow>Transaction Date: {trade.transactionDate}</TableRow>
-                    <TableRow>Transaction Type: {trade.transactionCode}</TableRow>
-                    <TableRow>Predetermined Trade: {trade.is10b51}</TableRow>                  
-                    <TableRow>Transaction Size: {trade.transactionShares} Shares</TableRow>
-                    <TableRow>Shares Remaining: {trade.postShares}</TableRow>                
-                </Table>
+                <h2>Insider Trades</h2>                
+                <Table className="insider-trades-table" aria-label="customized table">                  
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>Insider Name:</TableCell>
+                      <TableCell>Insider Title:</TableCell>
+                      <TableCell>Transaction Date:</TableCell>
+                      <TableCell>Transaction Type:</TableCell>
+                      <TableCell>Predetermined Trade:</TableCell>
+                      <TableCell>Transaction Size:</TableCell>
+                      <TableCell>Shares Remaining:</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  {insiderTrading.slice(0, insiderTradingCount).map((trade) => (
+                  <TableBody key={trade.date}>
+                    <TableRow>
+                      <TableCell>{trade.fullName}</TableCell>
+                      <TableCell>{trade.reportedTitle}</TableCell>
+                      <TableCell>{trade.transactionDate}</TableCell>
+                      <TableCell>{trade.transactionCode}</TableCell>
+                      <TableCell>{isBoolean(trade.is10b51)}</TableCell>                  
+                      <TableCell>{trade.transactionShares} Shares</TableCell>
+                      <TableCell>{trade.postShares}</TableCell>
+                    </TableRow>
+                  </TableBody>
                 ))}
+                </Table>
               </TableContainer>
               <br />
               <Button variant="contained" onClick={() => setInsiderTradingCount(insiderTradingCount + 3)}>Show More Transactions</Button>

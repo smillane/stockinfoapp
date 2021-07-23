@@ -81,8 +81,8 @@ function Search (props) {
                 <Typography variant='h3' gutterBottom>{stockInfo.companyName}</Typography>
                 <Typography variant='h4' gutterBottom>Price: {stockInfo.latestPrice}</Typography>
                 <Typography variant='h5' gutterBottom>Change: {stockInfo.change}, {(stockInfo.changePercent * 100).toFixed(2)}%</Typography>
-                <Typography variant='h5' gutterBottom>Volume: {stockInfo.latestVolume}</Typography>
-                <Typography variant='h5'>Avg Volume: {stockInfo.avgTotalVolume}</Typography>
+                <Typography variant='h5' gutterBottom>Volume: {(stockInfo.latestVolume).toLocaleString()}</Typography>
+                <Typography variant='h5'>Avg Volume: {(stockInfo.avgTotalVolume).toLocaleString()}</Typography>
               </Box>
 
               <Box className='stock-info border-top'>
@@ -103,7 +103,7 @@ function Search (props) {
                       <TableCell>Transaction Date:</TableCell>
                       <TableCell>Transaction Type:</TableCell>
                       <TableCell>Predetermined Trade:</TableCell>
-                      <TableCell>Transaction Size:</TableCell>
+                      <TableCell>Transaction Size (in shares):</TableCell>
                       <TableCell>Shares Remaining:</TableCell>
                     </TableRow>
                   </TableHead>
@@ -115,8 +115,8 @@ function Search (props) {
                       <TableCell>{trade.transactionDate}</TableCell>
                       <TableCell>{trade.transactionCode}</TableCell>
                       <TableCell>{isBoolean(trade.is10b51)}</TableCell>                  
-                      <TableCell>{trade.transactionShares} Shares</TableCell>
-                      <TableCell>{trade.postShares}</TableCell>
+                      <TableCell>{(trade.transactionShares).toLocaleString()}</TableCell>
+                      <TableCell>{(trade.postShares).toLocaleString()}</TableCell>
                     </TableRow>
                   </TableBody>
                 ))}

@@ -1,0 +1,1 @@
+use material ui typography trunclate to replace the yarn package truncate, create redirect link to full news page for each article using unique slug

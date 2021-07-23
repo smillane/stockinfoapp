@@ -24,8 +24,6 @@ function Search (props) {
   const [stockInfo, setStockInfo] = useState([]);
   const [insiderTrading, setInsiderTrading] = useState([]);
   const [insiderTradingCount, setInsiderTradingCount] = useState(3);
-  const [stockNews, setStockNews] = useState([]);
-  const [stockNewsCount, setStockNewsCount] = useState(3);
 
   const fetchDatastockInfo = async () => {
     return await fetch(`/stocks/${input}`)
@@ -45,26 +43,14 @@ function Search (props) {
       console.log("Error Reading data " + err)
   })}
 
-    const fetchDataStockNews = async () => {
-      return await fetch(`/stocknews/${input}`)
-      .then(response => response.json())
-      .then(data => { 
-        setStockNews(data)
-      }).catch(err => {
-        console.log("Error Reading data " + err)
-    })}
-
   useEffect(() => {fetchDatastockInfo()},[])
   useEffect(() => {fetchDataInsiderTrading()},[])
-  useEffect(() => {fetchDataStockNews()},[])
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     fetchDatastockInfo();
     fetchDataInsiderTrading();
-    fetchDataStockNews();
     setInsiderTradingCount(3);
-    setStockNewsCount(3);
   }
   
   return (
@@ -101,22 +87,6 @@ function Search (props) {
                 <Typography variant='body1' gutterBottom>Dividend Payment Date: </Typography>
                 <Typography variant='body1' gutterBottom>Dividend Record Date: </Typography>
               </Box>
-              
-              <TableContainer className='stock-info border-top'>
-                <h2>News</h2>
-                <Table aria-label="customized table">
-                {stockNews.slice(0, stockNewsCount).map((news) => (
-                    <TableRow key={news.date} className='stocknews'>
-                      <h3>{news.headline}</h3>
-                      <Truncate lines={3} width={500}>                      
-                        <span>{news.summary}</span>
-                      </Truncate>
-                    </TableRow>
-                ))}
-                </Table>
-              </TableContainer>
-              <br />
-              <Button variant="contained" onClick={() => setStockNewsCount(stockNewsCount + 3)}>Show More Articles</Button>
               
               <TableContainer className='stock-info border-top'>
                 <h2>Insider Trades</h2>

@@ -7,7 +7,6 @@ import TableRow from '@material-ui/core/TableRow';
 import Table from '@material-ui/core/Table';
 import '../Styles/Search.css';
 import Button from '@material-ui/core/Button';
-import Truncate from 'react-truncate';
 import styled from "styled-components";
 import { Box, Container, Typography, TableCell, TableHead, TableBody } from '@material-ui/core';
 

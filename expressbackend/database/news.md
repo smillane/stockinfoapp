@@ -1,3 +1,7 @@
+## Have news be a future feature down the line, since the queries/logic for when/how to update using api seems tricky and time consuming, and not an important feature
+
+
+
 if news table is empty for {stock} then run api, populate table
 `https://sandbox.iexapis.com/stable/stock/{stock}/news/last/20subattribute=langen?token=${IEX_PUBLIC_TOKEN}`
 
@@ -20,8 +24,3 @@ Your query would be: /time-series/news?subattribute=lang|en
 The syntax is subattribute={keyName1}|{value1},{keyName2}|{value2}
 
 Both the key name and the value are case sensitive. A pipe symbol (|) is used to represent “equal to”, and a tilde symbol (~) is used to represent “not equal to”.
-
-
-
-
-Have news be a future feature down the line, since the queries/logic for when/how to update using api seems tricky

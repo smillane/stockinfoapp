@@ -44,6 +44,8 @@ Website popularity
 
 congress trades
 
+pull data using SEC api's https://www.sec.gov/developer https://www.sec.gov/edgar/sec-api-documentation
+
 cms for "News" ??
 
 discord implementation for alerts based on your list/alerts

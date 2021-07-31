@@ -29,17 +29,11 @@ function connect() {
 
 function disconnect() {
   pool.release(err => {
-    console.log('pool  has disconnected');
+    console.log('pool has disconnected');
     if (err) {
       console.log('error during disconnection', err.stack);
     }
   });
-}
-
-function query() {
-  connect();
-  console.log('this is working');
-  disconnect();  
 }
 
 module.exports = { connect, disconnect }

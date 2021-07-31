@@ -2,9 +2,9 @@
 
 Built using React, Express, Postgres
 
-Data provided by IEX Cloud, https://iexcloud.io
+Some data provided by IEX Cloud, https://iexcloud.io
 
-Data provided by Twitter/Reddit API's
+Data provided by Twitter/Reddit/SEC API's
 
 # Features to be implemented
 

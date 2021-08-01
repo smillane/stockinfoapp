@@ -6,8 +6,8 @@ CREATE TABLE public."InsiderTrading"
     "ReportedTitle"         character varying(50) COLLATE pg_catalog."default" NOT NULL,
     "FilingDate"            character varying(50) COLLATE pg_catalog."default" NOT NULL,
     "TransactionCode"       character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    is10b51                 boolean NOT NULL,
-    "transactionShares"     character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    "Is10b51"               boolean NOT NULL,
+    "TransactionShares"     character varying(50) COLLATE pg_catalog."default" NOT NULL,
     "PostShares"            character varying(50) COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT "insiderTrading_pkey" PRIMARY KEY ("Symbol")
 )

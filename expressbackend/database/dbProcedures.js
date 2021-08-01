@@ -34,7 +34,7 @@ function insiderTradingUpdate (symbolInput, lastUpdatedInput, fullNameInput, rep
   )
   LANGUAGE plpgsql
   AS $$
-  declare
+  DECLARE
     
   BEGIN
     INSERT INTO insiderTrading (symbol, lastUpdated, fullName, reportedTitle, filingDate, transactionCode, is10b51, transactionShares, postShares)

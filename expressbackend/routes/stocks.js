@@ -16,8 +16,7 @@ router.get('/:id', async (req, res) => {
   console.log(req.params.id);
   const symbol = req.params.id;
   try { let response = await fetch(`https://sandbox.iexapis.com/stable/stock/${symbol}/quote?token=${process.env.IEX_PUBLIC_TOKEN}`);
-    let jsoned = await response.json();
-    
+    let jsoned = await response.json();    
     return res.json(jsoned);
   } catch (err) {
     res.status(500).json({ message: err.message });

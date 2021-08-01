@@ -35,12 +35,13 @@ CREATE TABLE public."StockList"
     CONSTRAINT "stockData_pkey" PRIMARY KEY ("Symbol")
 )
 
-CREATE TABLE public."UserList"
+CREATE TABLE public."UserListRel"
 (
+    "UserUUID"  uuid NOT NULL,
     "ListUUID"  uuid NOT NULL,
-    "Symbol"    character varying COLLATE pg_catalog."default" NOT NULL,
     "Rank"      integer NOT NULL,
-    CONSTRAINT "UserList_pkey" PRIMARY KEY ("ListUUID")
+    "ListName"  character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "UserListRel_pkey" PRIMARY KEY ("UserUUID")
 )
 
 CREATE TABLE public."UserListRel"

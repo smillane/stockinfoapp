@@ -1,60 +1,52 @@
-CREATE TABLE public."InsiderTrading"
+CREATE TABLE InsiderTrading
 (
-    "Symbol"                character varying(10) COLLATE pg_catalog."default" NOT NULL,
-    "LastUpdated"           timestamp with time zone NOT NULL,
-    "FullName"              character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    "ReportedTitle"         character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    "FilingDate"            character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    "TransactionCode"       character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    "Is10b51"               boolean NOT NULL,
-    "TransactionShares"     character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    "PostShares"            character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT "insiderTrading_pkey" PRIMARY KEY ("Symbol")
-)
+    Symbol                character varying(10)NOT NULL,
+    LastUpdated           timestamp with time zone NOT NULL,
+    FullName              character varying(50)NOT NULL,
+    ReportedTitle         character varying(50)NOT NULL,
+    FilingDate            character varying(50)NOT NULL,
+    TransactionCode       character varying(50)NOT NULL,
+    Is10b51               boolean NOT NULL,
+    TransactionShares     character varying(50)NOT NULL,
+    PostShares            character varying(50)NOT NULL,
+    PRIMARY KEY (Symbol)
+);
 
-CREATE TABLE public."StockDividend"
+CREATE TABLE StockDividend
 (
-    "Symbol"        character varying(10) COLLATE pg_catalog."default" NOT NULL,
-    "LastUpdated"   timestamp with time zone NOT NULL,
-    "Amount"        character varying COLLATE pg_catalog."default" NOT NULL,
-    "RecordDate"    character varying COLLATE pg_catalog."default" NOT NULL,
-    "Flag"          character varying COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT "stockDividend_pkey" PRIMARY KEY ("Symbol")
-)
+    Symbol			character varying(10),
+    LastUpdated		timestamp with time zone,
+    Amount        	character varying,
+    RecordDate    	character varying,
+    Flag          	character varying,
+    PRIMARY KEY (Symbol)
+);
 
-CREATE TABLE public."StockList"
+CREATE TABLE StockList
 (
-    "Symbol"            character varying(10) COLLATE pg_catalog."default" NOT NULL,
-    "LastUpdated"       timestamp with time zone NOT NULL,
-    "LatestPrice"       character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    "Change"            character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    "ChangePercent"     character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    "LatestVolume"      character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    "AvgTotalVolume"    character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    "PaymentDate"       character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT "stockData_pkey" PRIMARY KEY ("Symbol")
-)
+    Symbol            character varying(10)NOT NULL,
+    LastUpdated       timestamp with time zone NOT NULL,
+    LatestPrice       character varying(50)NOT NULL,
+    Change            character varying(50)NOT NULL,
+    ChangePercent     character varying(50)NOT NULL,
+    LatestVolume      character varying(50)NOT NULL,
+    AvgTotalVolume    character varying(50)NOT NULL,
+    PaymentDate       character varying(50)NOT NULL,
+    PRIMARY KEY (Symbol)
+);
 
-CREATE TABLE public."UserListRel"
+CREATE TABLE UserListRel
 (
-    "UserUUID"  uuid NOT NULL,
-    "ListUUID"  uuid NOT NULL,
-    "Rank"      integer NOT NULL,
-    "ListName"  character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT "UserListRel_pkey" PRIMARY KEY ("UserUUID")
-)
+    UserUUID  uuid NOT NULL,
+    ListUUID  uuid NOT NULL,
+    Rank      integer NOT NULL,
+    ListName  character varying(50) NOT NULL,
+    PRIMARY KEY (UserUUID)
+);
 
-CREATE TABLE public."UserListRel"
+CREATE TABLE Users
 (
-    "UserUUID"  uuid NOT NULL,
-    "ListUUID"  uuid NOT NULL,
-    "Rank"      integer NOT NULL,
-    CONSTRAINT "UserListRel_pkey" PRIMARY KEY ("UserUUID")
-)
-
-CREATE TABLE public."Users"
-(
-    "Name"      character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    "UserUUID"  uuid NOT NULL,
-    CONSTRAINT "Users_pkey" PRIMARY KEY ("UserUUID")
-)
+    Name      character varying(50) NOT NULL,
+    UserUUID  uuid NOT NULL,
+    PRIMARY KEY (UserUUID)
+);

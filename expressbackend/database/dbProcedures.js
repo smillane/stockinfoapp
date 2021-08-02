@@ -94,42 +94,43 @@ $$;
 
 
 
-CREATE PROCEDURE QueryStockList ()
+CREATE PROCEDURE QueryStockList (i_Symbol character varying)
 LANGUAGE SQL
 
 AS $$
 
-  SELECT * FROM StockList;
+  SELECT * FROM StockList WHERE Symbol = i_Symbol;
 
 $$;
 
 
-CREATE PROCEDURE QueryInsiderTrading ()
+CREATE PROCEDURE QueryInsiderTrading (i_Symbol character varying)
 LANGUAGE SQL
 
 AS $$
 
-  SELECT * FROM InsiderTrading;
+  SELECT * FROM InsiderTrading WHERE Symbol = i_Symbol ORDER BY FilingDate DESC;
 
 $$;
 
 
-CREATE PROCEDURE QueryStockDividend ();
+CREATE PROCEDURE QueryStockDividend (i_Symbol character varying)
 LANGUAGE SQL
 
 AS $$
 
-SELECT * FROM StockDividend;
+  SELECT * FROM StockDividend WHERE Symbol = i_Symbol;
 
 $$;
 
 
-CREATE PROCEDURE QueryUserListRel ()
+CREATE PROCEDURE QueryUserListRel (i_UserUUID uuid)
 LANGUAGE SQL
 
 AS $$
 
-  SELECT * FROM UserListRel;
+  SELECT * FROM UserListRel WHERE UserUUID = i_UserUUID ORDER BY Rank ASC;
 
 $$;
+
 

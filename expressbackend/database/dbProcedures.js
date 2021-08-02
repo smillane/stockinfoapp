@@ -89,3 +89,47 @@ AS $$
   INSERT INTO StockDividend(Symbol, LastUpdated, Amount, RecordDate, Flag) values(i_Symbol, i_LastUpdated, i_Amount, i_RecordDate, i_Flag);
 
 $$;
+
+
+
+
+
+CREATE PROCEDURE QueryStockList ()
+LANGUAGE SQL
+
+AS $$
+
+  SELECT * FROM StockList;
+
+$$;
+
+
+CREATE PROCEDURE QueryInsiderTrading ()
+LANGUAGE SQL
+
+AS $$
+
+  SELECT * FROM InsiderTrading;
+
+$$;
+
+
+CREATE PROCEDURE QueryStockDividend ();
+LANGUAGE SQL
+
+AS $$
+
+SELECT * FROM StockDividend;
+
+$$;
+
+
+CREATE PROCEDURE QueryUserListRel ()
+LANGUAGE SQL
+
+AS $$
+
+  SELECT * FROM UserListRel;
+
+$$;
+

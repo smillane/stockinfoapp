@@ -14,7 +14,7 @@ CREATE TABLE InsiderTrading
 
 CREATE TABLE StockDividend
 (
-    Symbol			character varying(10),
+    Symbol          character varying(10),
     LastUpdated		timestamp with time zone,
     Amount        	character varying,
     RecordDate    	character varying,

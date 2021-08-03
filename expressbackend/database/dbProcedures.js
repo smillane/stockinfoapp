@@ -37,6 +37,15 @@ AS $$
 
 $$;
 
+CREATE PROCEDURE UpdateUserStockRel (i_Symbol character varying(10), i_UserUUID uuid, i_ListUUID uuid, i_Rank integer)
+LANGUAGE SQL
+
+AS $$
+
+  UPDATE UserStockRel SET Rank = i_Rank WHERE ListUUID = i_ListUUID AND UserUUID = i_UserUUID AND Symbol = i_Symbol;
+
+$$;
+
 
 
 
@@ -89,6 +98,17 @@ AS $$
   INSERT INTO StockDividend(Symbol, LastUpdated, Amount, RecordDate, Flag) values(i_Symbol, i_LastUpdated, i_Amount, i_RecordDate, i_Flag);
 
 $$;
+
+
+CREATE PROCEDURE CreateUserStockRel (i_Symbol character varying(10), i_UserUUID uuid, i_ListUUID uuid, i_Rank integer)
+LANGUAGE SQL
+
+AS $$
+
+  INSERT INTO UserStockRel(Symbol, UserUUID, ListUUID, Rank) values(i_Symbol, i_UserUUID, i_ListUUID, i_Rank)
+
+$$;
+
 
 
 

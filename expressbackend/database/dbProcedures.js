@@ -134,3 +134,13 @@ AS $$
 $$;
 
 
+CREATE PROCEDURE QueryUserStockRel (i_UserUUID uuid, i_ListUUID uuid)
+LANGUAGE SQL
+
+AS $$
+
+  SELECT * FROM UserStockRel 
+  FULL OUTER JOIN StockList ON UserStockRel.Symbol = StockList.Symbol
+  WHERE UserUUID = i_UserUUID AND ListUUID = i_ListUUID ORDER BY Rank ASC;
+
+$$;

@@ -44,6 +44,15 @@ CREATE TABLE UserListRel
     PRIMARY KEY (UserUUID)
 );
 
+CREATE TABLE UserStockRel
+(
+    Symbol    character varying(10)NOT NULL,
+    UserUUID  uuid NOT NULL,
+    ListUUID  uuid NOT NULL,
+    Rank      integer NOT NULL,
+    PRIMARY KEY (UserUUID)
+);
+
 CREATE TABLE Users
 (
     Name      character varying(50) NOT NULL,
